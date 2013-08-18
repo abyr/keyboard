@@ -1,0 +1,32 @@
+.keyboard {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    width: 100%;
+}
+.keyboard .row {
+    margin-bottom: 2px;
+    display: -webkit-flex;
+    display: flex;
+}
+.keyboard .button {
+    width: 40px;
+    margin: 0 1px;
+    border:1px black solid;
+    text-align: center;
+    flex-shrink: 1;
+}
+.keyboard .jumper {
+    -webkit-flex-grow:1;
+    flex-grow:1;
+}
+.keyboard .empty {
+    border: none;
+}
+.keyboard .button.active {
+    background-color: rgb(26, 231, 26);
+}
+
+.keyboard .button.wrong {
+    background-color: rgb(255, 10, 10);
+}
