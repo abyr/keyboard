@@ -27,19 +27,19 @@
                 <div class="button bf12">F12</div>
             </div>
             <div class="row">
-                <div class="button btilda">~</div>
-                <div class="button b1">1</div>
-                <div class="button b2">2</div>
-                <div class="button b3">3</div>
-                <div class="button b4">4</div>
-                <div class="button b5">5</div>
-                <div class="button b6">6</div>
-                <div class="button b7">7</div>
-                <div class="button b8">8</div>
-                <div class="button b9">9</div>
-                <div class="button b0">0</div>
-                <div class="button bminus">-</div>
-                <div class="button bplus">+</div>
+                <div class="button btilda">`<sub>~</sub></div>
+                <div class="button b1">1<sub>!</sub></div>
+                <div class="button b2">2<sub>@</sub></div>
+                <div class="button b3">3<sub>#</sub></div>
+                <div class="button b4">4<sub>$</sub></div>
+                <div class="button b5">5<sub>%</sub></div>
+                <div class="button b6">6<sub>^</sub></div>
+                <div class="button b7">7<sub>&</sub></div>
+                <div class="button b8">8<sub>*</sub></div>
+                <div class="button b9">9<sub>(</sub></div>
+                <div class="button b0">0<sub>)</sub></div>
+                <div class="button bminus">-<sub>_</sub></div>
+                <div class="button bplus">+<sub>=</sub></div>
                 <div class="button jumper">Back Space</div>
             </div>
             <div class="row">
@@ -63,18 +63,18 @@
                 <div class="button ba">A</div>
                 <div class="button bs">S</div>
                 <div class="button bd">D</div>
-                <div class="button bf">F</div>
+                <div class="button bf helper">F</div>
                 <div class="button bg">G</div>
                 <div class="button bh">H</div>
-                <div class="button bj">J</div>
+                <div class="button bj helper">J</div>
                 <div class="button bk">K</div>
                 <div class="button bl">L</div>
-                <div class="button bsemicolon">;</div>
-                <div class="button bapostrophe">'</div>
+                <div class="button bsemicolon">;<sub>:</sub></div>
+                <div class="button bapostrophe">'<sub>"</sub></div>
                 <div class="button benter jumper">Enter</div>
             </div>
             <div class="row">
-                <div class="button jumper">Shift</div>
+                <div class="button bshift jumper">Shift</div>
                 <div class="button bz">Z</div>
                 <div class="button bx">X</div>
                 <div class="button bc">C</div>
@@ -82,18 +82,18 @@
                 <div class="button bb">B</div>
                 <div class="button bn">N</div>
                 <div class="button bm">M</div>
-                <div class="button bcomma">,</div>
-                <div class="button bpoint">.</div>
-                <div class="button bslash">/</div>
-                <div class="button jumper">Shift</div>
+                <div class="button bcomma">,<sub><</sub></div>
+                <div class="button bpoint">.<sub>></sub></div>
+                <div class="button bslash">/<sub>?</sub></div>
+                <div class="button bshiftr jumper">Shift</div>
             </div>
             <div class="row">
                 <div class="button bctrl">Ctl</div>
+                <div class="button bfn">fn</div>
                 <div class="button bwin">Win</div>
                 <div class="button balt">Alt</div>
                 <div class="button bspace jumper">Space</div>
                 <div class="button baltr">Alt</div>
-                <div class="button bwinr">Win</div>
                 <div class="button bmenu">Menu</div>
                 <div class="button bctrlr">Ctl</div>
             </div>
@@ -101,5 +101,10 @@
     </div>
 
     <script src="keyboard.js"></script>
+
+    <script>
+        var k = new Keyboard();
+        k.pressButton("ctrl").pressButton("a", true);
+    </script>
 </body>
 </html>
