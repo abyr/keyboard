@@ -15,6 +15,10 @@
     border:1px black solid;
     text-align: center;
     flex-shrink: 1;
+    font-weight: bold;
+}
+.keyboard .button sub {
+    font-weight: normal;
 }
 .keyboard .jumper {
     -webkit-flex-grow:1;
@@ -22,6 +26,9 @@
 }
 .keyboard .empty {
     border: none;
+}
+.keyboard .button.helper {
+    background-color: rgb(245, 253, 56);
 }
 .keyboard .button.active {
     background-color: rgb(26, 231, 26);
