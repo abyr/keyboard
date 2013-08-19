@@ -34,6 +34,8 @@
       "|": "bslash",
       "/": "bslash",
       "?": "bquestion",
+      "shift": "bshift",
+      "shiftr": "bshiftr",
       "ctrl": "bctrl",
       "win": "bwin",
       "alt": "balt",
@@ -49,13 +51,27 @@
     return this.map[alias] || "b" + alias;
   };
 
-  Keyboard.prototype.pressButton = function(button) {
-    var list, className;
-    list = document.getElementsByClassName("active");
-    list.removeClass("active");
-    className = this.getButtonClass(button);
-    list = document.getElementsByClassName(className);
-    list.addClass("active");
+  Keyboard.prototype.pressButton = function(button, add) {
+    var className, lowerButton, upperButton;
+
+    add = add || false;
+
+    lowerButton = button.toLowerCase();
+    upperButton = button.toUpperCase();
+
+    isCaseSensitive = lowerButton !== upperButton;
+
+    if (!add) {
+      document.getElementsByClassName("active").removeClass("active");
+    }
+
+    className = this.getButtonClass(lowerButton);
+    document.getElementsByClassName(className).addClass("active");
+
+    if (isCaseSensitive && button === upperButton) {
+      document.getElementsByClassName("bshift").addClass("active");
+    }
+    return this;
   };
 
   Element.prototype.addClass = function(c) {
@@ -82,7 +98,7 @@
   };
   NodeList.prototype.removeClass = function(c) {
     var el, _i, _len;
-    for (_i = 0, _len = this.length; _i < _len; _i++) {
+    for (_i = this.length - 1; _i >= 0; _i--) {
       el = this[_i];
       el.removeClass(c);
     }
